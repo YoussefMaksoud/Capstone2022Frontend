@@ -19,7 +19,7 @@ class Login extends Component{
                 <header className = "top">pIRfusiX</header>
                 <h1 className = ""></h1>
                 <form className = "logbox">
-                    <h1 className = "login">Login</h1>
+                    <h1 className = "login">Hello</h1>
                     <div className='user-div'>
                         <img src = {userLogo} className = "user-logo"></img>
                         <input type = "text" className = "username" placeholder = "EMAIL"></input>
