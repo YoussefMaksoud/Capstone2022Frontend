@@ -1,0 +1,112 @@
+.top {
+    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.logbox{
+    background-color: rgba(255, 255, 255, 0.897);
+    font-size: 30px;
+    margin-top: 100px;
+    height: 400px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    padding: 40px;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.05);
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.login{
+    font-weight: 250;
+    margin-left: 50px;
+    padding-top: 0px;
+}
+
+.username{
+    border-radius: 5px;
+    margin-bottom: 0px;
+    border-width: 0px;
+    height: 30px;
+    width: 20vw;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.password{
+    border-radius: 5px;
+    margin-bottom: 0px;
+    border-width: 0px;
+    height: 30px;
+    width: 20vw;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    align-items: centre;
+}
+
+.confirm{
+    border-radius: 10px;
+    width: 200px;
+    margin-left: 200px;
+    height: 50px;
+    border-width: 0px;
+    background: rgb(182, 182, 182);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.confirm:hover{
+    background-color:rgb(45, 78, 121);
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.back{
+    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
+    height: 1000px;
+}
+
+.confirm{
+    font-size: 15px;
+}
+
+.pass-logo{
+    height: 30px;
+    margin-left: 50px;
+}
+
+.user-logo{
+    height: 30px;
+    margin-left: 50px;
+}
+
+.user-div{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.pass-div{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.login-footer{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+}
+
+.dha{
+    font-size: 15px;
+    margin-left: 200px;
+    margin-right: -170px;
+}
+
+.create-link{
+    font-size: 15px;
+    display: inline;
+    text-decoration: none;
+    margin-left: 0px;
+}

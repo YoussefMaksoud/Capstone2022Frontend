@@ -1,0 +1,13 @@
+- trip phases
+    - display each of the trip phases
+    - prehodspital
+    - icu
+    - to operating room
+- Avatar in the top left corner
+    - hover
+- add hardware images in about page
+- cut down on the biographies
+-
+-
+-
+-

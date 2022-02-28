@@ -1,0 +1,153 @@
+#home-content{
+    display: flex;
+    height: 75vh;
+    flex-direction: row;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:100;
+    flex-wrap: wrap;
+}
+
+#overall{
+    display: flex;
+    flex-direction: column;
+}
+
+.navig-bar{
+
+}
+
+#col-1{
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#col-2{
+    flex-grow: 4;
+    padding-left: 10%;
+    padding-top: 5%;
+    background-color: rgb(68, 68, 68);
+    text-align: center;
+}
+
+#col-3{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 2;
+}
+
+#trip-progress{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+#trip-details{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#trip-id{
+ background-color: rgb(68, 68, 68);
+ color: white;
+ margin: 2.5px;
+ flex-grow: 1;
+ font-weight: 700;
+
+}
+
+#eta{
+    background-color: rgb(68, 68, 68);
+    font-weight: 700;
+    color: white;
+    margin: 2.5px;
+    flex-grow: 1;
+}
+
+#notes{
+    flex-grow: 8;
+    background-color: rgb(68, 68, 68);
+    color: white;
+    margin: 2.5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.trip-det-head{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 25;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+.bar-logo{
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list-title{
+    background-color: rgb(68, 68, 68);
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+#human-model{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+}
+
+.body-im{
+    height: 350px;
+    flex-grow: 1;
+    margin: 2.5px;
+    margin-bottom: 5px;
+}
+
+#chart-options{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    background-color: rgb(255, 255, 255);
+}
+
+#patient-list{
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+    height: 300px;
+    
+}
+
+#trip-list{
+    overflow: auto;
+    height: 300px;
+}
+
+.btn-logo{
+    width: 100px;
+}
+
+.chart-selection{
+    border-radius: 0px;
+    border-width: 2px;
+    margin: 10px;
+    background-color: rgb(68, 68, 68);
+}
+
+.chart-selection:hover{
+    box-shadow: 5px 5px 10px black;
+    background-color: rgb(156, 156, 156);
+    border-radius: 2.5%;
+    transition: ease-in-out 0.7s;
+}
+
+#footer{
+    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
+}
+

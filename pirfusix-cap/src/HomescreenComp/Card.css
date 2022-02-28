@@ -1,0 +1,100 @@
+#card-container{
+    background: linear-gradient(rgb(248, 248, 248), rgb(219, 219, 219)) 100%;
+    width: 200px;
+    height:100px;
+    box-shadow: 3px 3px 3px;
+    margin-top: 20px;
+    margin-right: 50px;;
+    display: flex;
+    flex-direction: column;
+}
+
+#trip-identification{
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    font-size: small;
+}
+
+#trip-info{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 16;
+}
+
+#identification{
+    background-color: rgb(182, 182, 182);
+    flex-grow: 2;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#the-patient{
+    background-color: rgb(182, 182, 182);
+    flex-grow: 2;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#to-trips{
+    background-color: rgb(185, 32, 32);
+    flex-grow: 1;
+    border-width: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+#to-trip1{
+    background-color: #afafaf;
+    transition: ease-in-out 0.7s;
+    flex-grow: 1;
+    border-width: 1px;
+}
+
+#to-trip2{
+    background-color: #afafaf;
+    transition: ease-in-out 0.7s;
+    flex-grow: 1;
+    border-width: 1px;
+}
+
+#to-trip3{
+    background-color: #afafaf;
+    transition: ease-in-out 0.7s;
+    flex-grow: 1;
+    border-width: 1px;
+}
+
+#to-trip1:hover{
+    background-color: #424242;
+    transition: ease-in-out 0.7s;
+
+}
+
+#to-trip2:hover{
+    background-color: #424242;
+    transition: ease-in-out 0.7s;
+
+}
+
+#to-trip3:hover{
+    background-color: #424242;
+    transition: ease-in-out 0.7s;
+
+}
+
+#arrival{
+    background-color: rgb(206, 206, 206);
+    padding-left: 12px;
+    font-size: small;
+}
+
+#arrow-logo{
+    width: 25px;
+}
+
+#general-trend{
+    margin-top: 50px;
+}
+
+

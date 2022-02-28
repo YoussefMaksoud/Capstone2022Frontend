@@ -1,0 +1,65 @@
+#footer-container{
+    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
+    height: 10vw;
+    display: flex;
+    flex-direction: row;
+}
+
+#support{
+    background-color: transparent;
+    flex-grow:1;
+}
+
+#FAQ{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-grow:1;
+}
+
+#location{
+    background-color: transparent;
+    flex-grow:2;
+    text-align: center;
+}
+
+#contact{
+    list-style: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    background: transparent;
+}
+
+#loc-details{
+    background-color: transparent;
+    font-size: 10px;
+}
+
+#faq{
+    background-color: transparent;
+    margin-top: 37px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-grow: 1;
+}
+
+.cont-item{
+    background-color: transparent;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.gq{
+    font-size: 20px;
+    flex-grow: 1;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    background-color: transparent;
+}
+
+#comp-email{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#facilities{
+    padding-left: 10px;
+}
