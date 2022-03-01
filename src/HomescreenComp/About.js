@@ -5,7 +5,6 @@ import Youssef from '../Assets/Youssef.png'
 import Randy from '../Assets/Randy.png'
 import Khaled from '../Assets/Khaled.png'
 import './About.css'
-import Background from '../Assets/cool-background.png'
 import Footer from '../HomescreenComp/footer'
 
 class About extends Component{

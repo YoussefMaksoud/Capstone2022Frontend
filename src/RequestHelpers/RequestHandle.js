@@ -4,36 +4,36 @@ class RequestHandle {
 
     //returns the list of all patients
     getPatients(){
-        return axios.get("http://localhost:8080/patients/all");
+        return axios.get("http://pirfusix-solutions.herokuapp.com/patients/all");
     }
 
     //gets a specific patients trips
     getTrips(hcn){
-        var request = "http://localhost:8080/patients/" + hcn + "/trips"
+        var request = "http://pirfusix-solutions.herokuapp.com/patients/" + hcn + "/trips"
         return axios.get(request);
     }
 
     //gets specific patients notes
     getNotes(hcn){
-        var request = "http://localhost:8080/patients/" + hcn + "/notes"
+        var request = "http://pirfusix-solutions.herokuapp.com/patients/" + hcn + "/notes"
         return axios.get(request);
     }
 
     //gets specific patient conditions
     getConds(hcn){
-        var request = "http://localhost:8080/patients/" + hcn + "/conditions"
+        var request = "http://pirfusix-solutions.herokuapp.com/patients/" + hcn + "/conditions"
         return axios.get(request);
     }
 
     //adds condition for patient
     addCond(obj, hcn){
-        var request = "http://localhost:8080/patients/" + hcn + "/" + obj.CondID + "/addCond"
+        var request = "http://pirfusix-solutions.herokuapp.com/patients/" + hcn + "/" + obj.CondID + "/addCond"
         return axios.post(request, obj);
     }
 
     //add note for patient
     addNote(obj, hcn){
-        var request = "http://localhost:8080/patients/" + hcn + "/" + obj.NoteID + "/addNote"
+        var request = "http://pirfusix-solutions.herokuapp.com/patients/" + hcn + "/" + obj.NoteID + "/addNote"
         return axios.post(request, obj);
     }
     //delete condition for patient using the delete button
