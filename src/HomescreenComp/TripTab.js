@@ -12,7 +12,6 @@ class TripTab extends Component{
         super(props);
         this.state = {
             triplist:[],
-            current_patient
         }
     }
 
