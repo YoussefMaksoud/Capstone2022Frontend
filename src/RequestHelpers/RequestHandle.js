@@ -39,6 +39,12 @@ class RequestHandle {
     //delete condition for patient using the delete button
     //delete note for patient using delete button
 
+    //get all trips for the trips tab
+    getAllTrips(){
+        var request = "https://pirfusix-solutions.herokuapp.com/trips/all"
+        return axios.get(request);
+    }
+
 }
 
 export default new RequestHandle();
