@@ -89,7 +89,7 @@ class SignUp extends Component{
 
         alert(JSON.stringify(obj));
 
-        axios.post("http://pirfusix-solutions.herokuapp.com/SignUp", obj)
+        axios.post("https://pirfusix-solutions.herokuapp.com/SignUp", obj)
             .then(res => {
                 console.log(obj);
                 console.log(obj.data);
