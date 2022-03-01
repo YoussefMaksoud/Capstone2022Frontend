@@ -22,6 +22,9 @@ class TripTab extends Component{
             this.setState({triplist: temp});
             console.log(this.state.triplist);
         })
+        .catch(function (ex) {
+            console.log("Response parsing failed, Error: ", ex)
+        });;
     }
 
     render(){
