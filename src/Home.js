@@ -67,10 +67,10 @@ class Home extends Component {
         var temp = []
         temp = response.data;
         this.setState({trip_data_string: temp})
-        console.log(this.state.trip_data_string)
+        alert(this.state.trip_data_string)
     })
     .catch(function (ex) {
-        console.log("Response parsing failed, Error: ", ex)
+        alert("Response parsing failed, Error: ", ex)
     });;
   }
 
@@ -144,7 +144,7 @@ class Home extends Component {
             <div className = "list-title">TRIPS</div>
             <ul>
               {trips.map((item, index) => {
-                return <Card id = {item.id} patient = {item.patient} eta = {item.eta} onClick = {this.displayTripInfo}></Card>
+                return <button onClick = {this.displayTripInfo}>{item.id}</button>
               })}
             </ul>
           </div>
