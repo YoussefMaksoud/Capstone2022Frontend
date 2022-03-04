@@ -6,6 +6,11 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}, {name: 'Page B', uv: 200, pv: 2400, amt: 2400}]
 
 class Card extends Component{
+
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <div id = "card-container">
@@ -17,7 +22,7 @@ class Card extends Component{
                     <div id = "arrival">{this.props.eta}</div>
                     <div id = "phases">
                         <div id = "to-trips">
-                            <button id = "to-trip1">
+                            <button id = "to-trip1" onClick = {this.props.onClick}>
                                 <div className = "phase-label1">PH</div>
                                 <img id = "arrow-logo" src = {arrow}></img>
                             </button>
