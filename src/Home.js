@@ -25,7 +25,7 @@ class Home extends Component {
 
     this.state = {
       chart_option: 1,
-      trip_data_string: ""
+      trip_data_string: []
     }
 
     this.showBar = this.showBar.bind(this);
