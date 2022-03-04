@@ -45,6 +45,12 @@ class RequestHandle {
         return axios.get(request);
     }
 
+    //get data for a trip
+    getTripData(){
+        var request = "https://pirfusix-solutions.herokuapp.com/tripdata/testget"
+        return axios.get(request);
+    }
+
 }
 
 export default new RequestHandle();

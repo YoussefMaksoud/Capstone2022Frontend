@@ -15,6 +15,7 @@ import Dropdown from './HomescreenComp/Dropdown';
 import {patients} from './DummyData/patients.js'
 import {trips} from './HomescreenComp/Trips'
 import Card from "./HomescreenComp/Card";
+import RequestHandle from './RequestHelpers/RequestHandle';
 
 
 class Home extends Component {
@@ -23,7 +24,8 @@ class Home extends Component {
     super();
 
     this.state = {
-      chart_option: 1
+      chart_option: 1,
+      trip_data_string: ""
     }
 
     this.showBar = this.showBar.bind(this);
@@ -58,6 +60,18 @@ class Home extends Component {
     this.setState({
       chart_option: 4
     })
+  }
+
+  displayTripInfo(){
+      RequestHandle.getTripData().then((response) => {
+        var temp = []
+        temp = response.data;
+        this.setState({trip_data_string: temp})
+        console.log(this.state.trip_data_string)
+    })
+    .catch(function (ex) {
+        console.log("Response parsing failed, Error: ", ex)
+    });;
   }
 
   render(){
@@ -130,7 +144,7 @@ class Home extends Component {
             <div className = "list-title">TRIPS</div>
             <ul>
               {trips.map((item, index) => {
-                return <Card id = {item.id} patient = {item.patient} eta = {item.eta}></Card>
+                return <Card id = {item.id} patient = {item.patient} eta = {item.eta} onClick = {this.displayTripInfo}></Card>
               })}
             </ul>
           </div>
