@@ -68,8 +68,7 @@ class Home extends Component {
         var temp = []
         temp = response.data;
         this.setState({trip_data_string: temp})
-        console.log(this.state.trip_data_string)
-        console.log(JSON.parse(this.state.trip_data_string.test_String))
+        console.log(this.state.trip_data_string.test_String)
     })
     .catch(function (ex) {
         console.log("Response parsing failed, Error: ", ex)
