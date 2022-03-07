@@ -56,7 +56,7 @@ class PatientTab extends Component{
             temp = response.data;
             this.setState({triplist: temp})
             this.setState({current_pat: f + " " + l})
-            alert(this.state.triplist)
+            console.log(this.state.triplist)
         })
         .catch(function (ex) {
             console.log("Response parsing failed, Error: ", ex)

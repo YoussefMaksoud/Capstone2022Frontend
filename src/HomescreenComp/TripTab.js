@@ -20,7 +20,7 @@ class TripTab extends Component{
             var temp = [];
             temp = response.data;
             this.setState({triplist: temp});
-            alert((temp));
+            console.log((temp));
         })
         .catch(function (ex) {
             console.log("Response parsing failed, Error: ", ex)
