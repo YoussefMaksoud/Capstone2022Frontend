@@ -68,6 +68,7 @@ class Home extends Component {
         var temp = []
         temp = response.data;
         this.setState({trip_data_string: temp})
+        console.log(this.state.trip_data_string)
         console.log(JSON.parse(this.state.trip_data_string))
     })
     .catch(function (ex) {
