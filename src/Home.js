@@ -32,6 +32,7 @@ class Home extends Component {
     this.showLine = this.showLine.bind(this);
     this.showPie = this.showPie.bind(this);
     this.showScatter = this.showScatter.bind(this);
+    this.displayTripInfo = this.displayTripInfo.bind(this);
   }
 
   showLine = () => {
@@ -69,9 +70,9 @@ class Home extends Component {
         this.setState({trip_data_string: temp})
         alert(temp)
     })
-    /*.catch(function (ex) {
+    .catch(function (ex) {
         alert("Response parsing failed, Error: ", ex)
-    });;*/
+    });;
   }
 
   render(){
