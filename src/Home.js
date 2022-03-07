@@ -71,7 +71,7 @@ class Home extends Component {
         console.log(this.state.trip_data_string)
     })
     .catch(function (ex) {
-        alert("Response parsing failed, Error: ", ex)
+        console.log("Response parsing failed, Error: ", ex)
     });;
   }
 
