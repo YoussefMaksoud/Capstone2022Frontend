@@ -92,7 +92,7 @@ class PatientTab extends Component{
             note: this.state.current_note
         }
 
-        alert(JSON.stringify(obj));
+        console.log(JSON.stringify(obj));
 
         RequestHandle.addNote(obj, this.state.current_hcn)
             .then(res => {
@@ -118,7 +118,7 @@ class PatientTab extends Component{
             cond: this.state.current_cond
         }
 
-        alert(JSON.stringify(obj));
+        console.log(JSON.stringify(obj));
 
         RequestHandle.addCond(obj, this.state.current_hcn)
             .then(res => {

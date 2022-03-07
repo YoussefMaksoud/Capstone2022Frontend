@@ -69,9 +69,9 @@ class Home extends Component {
         this.setState({trip_data_string: temp})
         alert(temp)
     })
-    .catch(function (ex) {
+    /*.catch(function (ex) {
         alert("Response parsing failed, Error: ", ex)
-    });;
+    });;*/
   }
 
   render(){
