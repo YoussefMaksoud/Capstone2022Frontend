@@ -124,7 +124,6 @@ class Home extends Component {
           </div>
         </div>
         <div id = "col-2">
-          <h1>Tissue Perfusion Level Over Time</h1>
           {(() => {
             switch (this.state.chart_option) {
               case 1:
