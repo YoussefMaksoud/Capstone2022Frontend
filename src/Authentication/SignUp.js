@@ -103,9 +103,9 @@ class SignUp extends Component{
     render(){
 
         return (
-            <div className = "back" >
-                <header className = "top">pIRfusiX</header>
-                <h1 className = ""></h1>
+            <div className = "create-back" >
+                <header className = "create-top">pIRfusiX</header>
+                <div id = "whitespace"></div>
                 <form className = "createbox">
                     <h1 className = "create">Create Account</h1>
                     <div className = "fields">
@@ -123,28 +123,34 @@ class SignUp extends Component{
                             </input>
                         </div>
                         <div className='other-fields'>
-                            <h2 className = "label">Email</h2>
-                            <input type = "text" 
-                                className = "email" 
-                                type = "email" 
-                                placeholder = "Email Address"
-                                onChange = {(item) => this.validEmail(item)}>
-                            </input>
-                            <h2 className = "label">Phone</h2>
-                            <input 
-                                type = "text" 
-                                className = "phone" 
-                                type = "phone" 
-                                placeholder = "(403)123-4567"
-                                onChange = {(item) => this.validPhone(item)}>
-                            </input>
-                            <h2 className = "label">License</h2>
-                            <input 
-                                type = "text" 
-                                className = "license" 
-                                placeholder = "123456"
-                                onChange = {(item) => this.validLicense(item)}>
-                            </input>
+                            <div className = "inputs">
+                                <h2 className = "label">Email</h2>
+                                <input type = "text" 
+                                    className = "email" 
+                                    type = "email" 
+                                    placeholder = "Email Address"
+                                    onChange = {(item) => this.validEmail(item)}>
+                                </input>
+                            </div>
+                            <div className = "inputs">
+                                <h2 className = "label">Phone</h2>
+                                <input 
+                                    type = "text" 
+                                    className = "phone" 
+                                    type = "phone" 
+                                    placeholder = "(403)123-4567"
+                                    onChange = {(item) => this.validPhone(item)}>
+                                </input>
+                            </div>
+                            <div className = "inputs">
+                                <h2 className = "label">License</h2>
+                                <input 
+                                    type = "text" 
+                                    className = "license" 
+                                    placeholder = "123456"
+                                    onChange = {(item) => this.validLicense(item)}>
+                                </input>
+                            </div>
                         </div>
                     </div>
                     <div className = "checkbox">

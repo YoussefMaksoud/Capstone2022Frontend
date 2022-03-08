@@ -6,6 +6,7 @@ class footer extends Component{
     render(){
         return(
             <div className = {this.props.className}>
+                <div id = "whitespace"></div>
                 <div id = "footer-container">
                     <div id = "support">
                         <ul id = "contact">

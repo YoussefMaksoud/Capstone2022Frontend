@@ -29,6 +29,7 @@ class Navig extends Component{
                         })}
                     </ul>
                 </nav>
+                <div id = "whitespace"></div>
             </div>
         )
     }

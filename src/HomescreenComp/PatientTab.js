@@ -170,7 +170,8 @@ class PatientTab extends Component{
                                 </div>
                                 <div className = "submit-container">
                                     <input type = "text" className = "add-note" onChange = {(item) => this.validCond(item)} placeholder = "Add patient Condition"></input>
-                                    <button className = "add" onClick = {(event) => this.addCond(event)}>add</button>
+                                    <button className = "add" onClick = {(event) => this.addCond(event)}>+</button>
+                                    <button className = "delete" >-</button>
                                 </div>
                             </div>
                             <h3 className = "info-header">Notes</h3>
@@ -184,7 +185,8 @@ class PatientTab extends Component{
                                 </div>
                                 <div className = "submit-container">
                                     <input type = "text" className = "add-note" onChange = {(item) => this.validNote(item)} placeholder = "Add patient Note"></input>
-                                    <button className = "add" onClick = {(event) => this.addNote(event)} onClick = {() => this.addNote()}>add</button>
+                                    <button className = "add" onClick = {(event) => this.addNote(event)} onClick = {() => this.addNote()}>+</button>
+                                    <button className = "delete" >-</button>
                                 </div>
                             </div>
                         </div>

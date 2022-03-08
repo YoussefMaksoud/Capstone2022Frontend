@@ -1,11 +1,21 @@
+.login-back{
+    background-color: rgb(136, 167, 255);
+}
+
+#whitespace{
+    background-color: white;
+    height: 5px;
+}
+
 .top {
-    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
+    Background: rgb(66, 106, 216);
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
 }
 
 .logbox{
@@ -13,48 +23,57 @@
     font-size: 30px;
     margin-top: 100px;
     height: 400px;
-    border-radius: 20px;
-    display: grid;
-    grid-template-rows: repeat(3, auto);
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     padding: 40px;
     box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.05);
     margin-right: 20%;
-    margin-left: 20%;
+    margin-left: 15%;
 }
 
 .login{
-    font-weight: 250;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
     margin-left: 50px;
     padding-top: 0px;
+    
 }
 
 .username{
     border-radius: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
     border-width: 0px;
     height: 30px;
     width: 20vw;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .password{
     border-radius: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+    margin-left: 20px;
     border-width: 0px;
     height: 30px;
     width: 20vw;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
     align-items: centre;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .confirm{
     border-radius: 10px;
-    width: 200px;
-    margin-left: 200px;
+    width: 30%;
+    margin-left: 100px;
     height: 50px;
     border-width: 0px;
     background: rgb(182, 182, 182);
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    background-color: rgb(136, 167, 255);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .confirm:hover{
@@ -63,13 +82,9 @@
     transition: all 0.5s ease-in-out;
 }
 
-.back{
-    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
-    height: 1000px;
-}
-
 .confirm{
     font-size: 15px;
+    margin-bottom: 30px;
 }
 
 .pass-logo{
@@ -83,25 +98,26 @@
 }
 
 .user-div{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+    display: flex;
+    flex-direction: row;
 }
 
 .pass-div{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+    display: flex;
+    flex-direction: row;
 }
 
 .login-footer{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .dha{
     font-size: 15px;
-    margin-left: 200px;
-    margin-right: -170px;
+    margin-left: 100px;
+    margin-right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
 }
 
 .create-link{
@@ -110,3 +126,6 @@
     text-decoration: none;
     margin-left: 0px;
 }
+
+
+

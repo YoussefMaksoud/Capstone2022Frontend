@@ -1,8 +1,9 @@
 #footer-container{
-    Background: linear-gradient(90deg, rgb(182, 182, 182) 0%, rgb(255, 255, 255) 40%);
+    Background: rgb(66, 106, 216);
     height: 10vw;
     display: flex;
     flex-direction: row;
+    margin-bottom: 0;
 }
 
 #support{
@@ -19,13 +20,13 @@
 
 #location{
     background-color: transparent;
-    flex-grow:2;
+    flex-grow:1;
     text-align: center;
 }
 
 #contact{
     list-style: none;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-family: Arial, Helvetica, sans-serif;
     background: transparent;
 }
 
@@ -38,7 +39,7 @@
     background-color: transparent;
     margin-top: 37px;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     flex-grow: 1;
 }
 
@@ -51,7 +52,7 @@
 .gq{
     font-size: 20px;
     flex-grow: 1;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: transparent;
 }
 

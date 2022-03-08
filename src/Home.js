@@ -79,6 +79,11 @@ class Home extends Component {
     return (  
     <div id = "overall">
       <Navig className = "navig-bar"/>
+      <div id = "content-headers">
+        <div className = "header-1">TRIP INFORMATION</div>
+        <div className = "header-2">OXYGEN READINGS</div>
+        <div className = "header-3">PATIENTS</div>
+      </div>
       <div id = "home-content">
         <div id = "col-1">
           <div id = "trip-progress">
@@ -97,7 +102,10 @@ class Home extends Component {
               </p>
             </div>
             <div id = "human-model">
-              {/*<img src = {body_im} className = "body-im"></img>*/}
+              <div className = "limb">LA</div>
+              <div className = "limb">RA</div>
+              <div className = "limb">LL</div>
+              <div className = "limb">RL</div>
             </div>
           </div>
           <div id = "chart-options">
@@ -134,18 +142,17 @@ class Home extends Component {
         </div>
         <div id = "col-3">
           <div id = "patient-list">
-            <div className = "list-title">PATIENTS</div>
             <ul>
               {patients.map((item, index) => {
                 return <Dropdown question = {item.name} answer = {item.info}></Dropdown>
               })}
             </ul>
           </div>
+          <div className = "list-title">TRIPS</div>
           <div id = "trip-list">
-            <div className = "list-title">TRIPS</div>
             <ul>
               {trips.map((item, index) => {
-                return <button onClick = {this.displayTripInfo}>{item.id}</button>
+                return <Card onClick = {this.displayTripInfo}>{item.id}</Card>
               })}
             </ul>
           </div>
