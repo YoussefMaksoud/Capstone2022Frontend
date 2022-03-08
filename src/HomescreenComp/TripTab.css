@@ -2,3 +2,18 @@
     display: flex;
     flex-direction: column;
 }
+
+#the-container{
+    display: flex;
+    flex-direction: row;
+}
+
+#all-trips{
+    overflow: auto;
+    flex-grow: 1;
+}
+
+#the-chart{
+    flex-grow: 1;
+    margin-left: 700px;
+}

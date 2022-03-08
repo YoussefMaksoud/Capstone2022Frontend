@@ -15,24 +15,17 @@ class Card extends Component{
         return(
             <div id = "card-container">
                 <div id = "trip-identification">
-                    <div id = "identification">{this.props.id}</div>
-                    <div id = "the-patient">{this.props.patient}</div>
+                    <div id = "identification">ID: {this.props.id}</div>
+                    <div id = "the-patient">Patient: {this.props.patient}</div>
                 </div>
                 <div id = "trip-info">
-                    <div id = "arrival">{this.props.eta}</div>
                     <div id = "phases">
                         <div id = "to-trips">
-                            <button id = "to-trip1" onClick = {this.props.onClick}>
-                                <div className = "phase-label1">PH</div>
-                                <img id = "arrow-logo" src = {arrow}></img>
+                            <button id = "to-trip1" onClick = {this.props.onClick}>PH
                             </button>
-                            <button id = "to-trip2">
-                                <div className = "phase-label2">ICU</div>
-                                <img id = "arrow-logo" src = {arrow}></img>
+                            <button id = "to-trip2" onClick = {this.props.onClick}>ICU
                             </button>
-                            <button id = "to-trip3">
-                                <div className = "phase-label3">OR</div>
-                                <img id = "arrow-logo" src = {arrow}></img>
+                            <button id = "to-trip3" onClick = {this.props.onClick}>OR
                             </button>
                         </div>
                     </div>

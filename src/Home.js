@@ -75,6 +75,10 @@ class Home extends Component {
     });;
   }
 
+  helloAlert(){
+    alert("Hello World")
+  }
+
   render(){
     return (  
     <div id = "overall">

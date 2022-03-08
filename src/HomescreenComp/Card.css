@@ -1,100 +1,80 @@
 #card-container{
-    background: linear-gradient(rgb(248, 248, 248), rgb(219, 219, 219)) 100%;
-    width: 200px;
-    height:100px;
+    width: 300px;
+    height: 50px;
     box-shadow: 3px 3px 3px;
     margin-top: 20px;
-    margin-right: 50px;;
+    background-color: red;
     display: flex;
     flex-direction: column;
 }
 
 #trip-identification{
-    background-color: red;
     display: flex;
     flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
     flex-grow: 1;
     font-size: small;
 }
 
 #trip-info{
-    background-color: rgb(255, 255, 255);
-    flex-grow: 16;
-}
-
-#identification{
-    background-color: rgb(182, 182, 182);
-    flex-grow: 2;
-    text-align: center;
-    padding-top: 10px;
-}
-
-#the-patient{
-    background-color: rgb(182, 182, 182);
-    flex-grow: 2;
-    text-align: center;
-    padding-top: 10px;
-}
-
-#to-trips{
-    background-color: rgb(185, 32, 32);
-    flex-grow: 1;
-    border-width: 0px;
+    background-color: rgb(136, 167, 255);
+    flex-grow: 4;
     display: flex;
     flex-direction: row;
 }
 
-#to-trip1{
-    background-color: #afafaf;
-    transition: ease-in-out 0.7s;
+#identification{
+    background-color: rgb(136, 167, 255);
     flex-grow: 1;
-    border-width: 1px;
+    text-align: left;
+    padding-top: 5px;
+}
+
+#the-patient{
+    background-color: rgb(136, 167, 255);
+    flex-grow: 1;
+    text-align: left;
+    padding-top: 5px;
+}
+
+#to-trip1{
+    background-color: #17ac6e;
+    flex-grow: 1;
+    height: 35px;
+    width: 100px;
+    border-style: none;
 }
 
 #to-trip2{
-    background-color: #afafaf;
-    transition: ease-in-out 0.7s;
-    flex-grow: 1;
-    border-width: 1px;
+    background-color: #ccc924;
+    height: 35px;
+    width: 100px;
+    border-style: none;
 }
 
 #to-trip3{
-    background-color: #afafaf;
-    transition: ease-in-out 0.7s;
-    flex-grow: 1;
-    border-width: 1px;
+    background-color: #b10707;
+    height: 35px;
+    width: 100px;
+    border-style: none;
 }
 
 #to-trip1:hover{
-    background-color: #424242;
+    background-color: rgb(83, 132, 255);
     transition: ease-in-out 0.7s;
 
 }
 
 #to-trip2:hover{
-    background-color: #424242;
+    background-color: rgb(83, 132, 255);
     transition: ease-in-out 0.7s;
 
 }
 
 #to-trip3:hover{
-    background-color: #424242;
+    background-color: rgb(83, 132, 255);
     transition: ease-in-out 0.7s;
 
-}
-
-#arrival{
-    background-color: rgb(206, 206, 206);
-    padding-left: 12px;
-    font-size: small;
-}
-
-#arrow-logo{
-    width: 25px;
-}
-
-#general-trend{
-    margin-top: 50px;
 }
 
 
