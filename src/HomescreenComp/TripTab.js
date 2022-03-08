@@ -5,6 +5,7 @@ import Footer from './footer'
 import Card from './Card'
 import {trips} from "./Trips"
 import RequestHandle from '../RequestHelpers/RequestHandle';
+import LC from '../Charts/LC';
 
 class TripTab extends Component{
 
@@ -31,13 +32,19 @@ class TripTab extends Component{
         return(
             <div>
                 <Navig/>
-                <div id = "all-trips">
-                    <ul id = "all-the-trips">
-                        {this.state.triplist.map((the_trip) => {
-                            return <Card id = {the_trip.tripid} patient = {the_trip.hcn} eta = {the_trip.elapsedTime}></Card>
-                        })}
-                    </ul> 
+                <div id = "the-container">
+                    <div id = "all-trips">
+                        <ul id = "all-the-trips">
+                            {this.state.triplist.map((the_trip) => {
+                                return <Card id = {the_trip.tripid} patient = {the_trip.hcn} eta = {the_trip.elapsedTime}></Card>
+                            })}
+                        </ul> 
+                    </div>
+                    <div id = "the-chart">
+                            <LC></LC>
+                    </div>
                 </div>
+
                 <Footer/>
             </div>
         )
