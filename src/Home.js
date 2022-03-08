@@ -95,7 +95,7 @@ class Home extends Component {
           <div id = "trip-progress">
             <div id = "trip-details">
               <div id = "trip-id">
-                <h5 className = "trip-det-head">Trip Identification Number:</h5>
+                <h5 className = "trip-det-head">Trip Identification Number: {this.state.current_trip_id}</h5>
                 <hr></hr>
               </div>
               <div id = "eta">
