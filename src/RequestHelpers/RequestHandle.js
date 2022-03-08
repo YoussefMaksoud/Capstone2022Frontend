@@ -51,6 +51,17 @@ class RequestHandle {
         return axios.get(request);
     }
 
+    //delete an added note
+    deleteNote(id){
+        var request = "https://pirfusix-solutions.herokuapp.com/patients/notes/delete/" + id
+        return axios.delete(request);
+    }
+
+    deleteCond(id){
+        var request = "https://pirfusix-solutions.herokuapp.com/patients/conditions/delete/" + id
+        return axios.delete(request);
+    }
+
 }
 
 export default new RequestHandle();
