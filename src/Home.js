@@ -25,7 +25,8 @@ class Home extends Component {
 
     this.state = {
       chart_option: 1,
-      trip_data_string: []
+      trip_data_string: [],
+      current_trip_id: ""
     }
 
     this.showBar = this.showBar.bind(this);
@@ -68,6 +69,7 @@ class Home extends Component {
         var temp = []
         temp = response.data;
         this.setState({trip_data_string: temp})
+        this.setState({current_trip_id: this.state.trip_data_string.id})
         console.log(this.state.trip_data_string)
     })
     .catch(function (ex) {
