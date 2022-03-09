@@ -17,7 +17,10 @@ import {trips} from './HomescreenComp/Trips'
 import Card from "./HomescreenComp/Card";
 import RequestHandle from './RequestHelpers/RequestHandle';
 
-
+const test = {
+    id: '1',
+    test_String: '{"id":"1", "values":"[12, 12, 12, 12, 12]", "times":"[12:00, 12:05, 12:10, 12:15, 12:20]", "deviceLocation":"[1, 2, 3, 4, 1]"}'
+}
 class Home extends Component {
 
   constructor(){
@@ -26,7 +29,10 @@ class Home extends Component {
     this.state = {
       chart_option: 1,
       trip_data_string: [],
-      current_trip_id: ""
+      current_trip_id: "",
+      current_times: [],
+      current_values: [],
+      current_loc: []
     }
 
     this.showBar = this.showBar.bind(this);
@@ -34,6 +40,7 @@ class Home extends Component {
     this.showPie = this.showPie.bind(this);
     this.showScatter = this.showScatter.bind(this);
     this.displayTripInfo = this.displayTripInfo.bind(this);
+    this.helloAlert = this.helloAlert.bind(this);
   }
 
   showLine = () => {
@@ -78,7 +85,33 @@ class Home extends Component {
   }
 
   helloAlert(){
-    alert("Hello World")
+    //alert(JSON.parse(test.test_String).values)
+
+    //this.setState({current_trip_id: test.id})
+    //this.setState({current_loc: JSON.parse(test.test_String).deviceLocation})
+    //this.setState({current_times: JSON.parse(test.test_String).times})
+    //this.setState({current_values: JSON.parse(test.test_String).values})
+
+    var vals_temp = JSON.parse(test.test_String).values
+    vals_temp = vals_temp.replace("[", "")
+    vals_temp = vals_temp.replace("]", "")
+    var vals_int = vals_temp.split(',').map(function(item){
+      return parseInt(item);
+    })
+
+    this.setState({current_values: Object.values(vals_int)})
+    alert(this.state.current_values)
+
+    var times_temp = JSON.parse(test.test_String).times
+    times_temp = times_temp.replace("[", "")
+    times_temp = times_temp.replace("]", "")
+    var times_int = times_temp.split(',').map(function(item){
+      return toString(item);
+    })
+
+    this.setState({current_times: Object.values(times_int)})
+    alert(this.state.current_times)
+
   }
 
   render(){
@@ -157,7 +190,7 @@ class Home extends Component {
           <div id = "trip-list">
             <ul>
               {trips.map((item, index) => {
-                return <Card onClick = {this.displayTripInfo}>{item.id}</Card>
+                return <Card onClick = {this.helloAlert}>{item.id}</Card>
               })}
             </ul>
           </div>
