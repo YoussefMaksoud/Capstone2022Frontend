@@ -38,7 +38,6 @@ class Home extends Component {
       current_trip_id: "",
       current_times: [],
       current_values: [],
-      current_loc: [],
       data: data
     }
 
