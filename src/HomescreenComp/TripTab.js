@@ -36,7 +36,7 @@ class TripTab extends Component{
                     <div id = "all-trips">
                         <ul id = "all-the-trips">
                             {this.state.triplist.map((the_trip) => {
-                                return <Card id = {the_trip.tripid} patient = {the_trip.hcn} eta = {the_trip.elapsedTime}></Card>
+                                return <Card id = {the_trip.tripid} patient = {the_trip.fname + " " + the_trip.lname} eta = {the_trip.elapsedTime}></Card>
                             })}
                         </ul> 
                     </div>
