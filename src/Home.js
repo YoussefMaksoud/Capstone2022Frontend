@@ -19,8 +19,12 @@ import RequestHandle from './RequestHelpers/RequestHandle';
 
 const test = {
     id: '1',
-    test_String: '{"id":"1", "values":"[12, 12, 12, 12, 12]", "times":"[12:00, 12:05, 12:10, 12:15, 12:20]", "deviceLocation":"[1, 2, 3, 4, 1]"}'
+    test_String: '{"id":"1", "values":"[100, 150, 100, 200, 100]", "times":"[12:00, 12:05, 12:10, 12:15, 12:20]", "deviceLocation":"[1, 2, 3, 4, 1]"}'
 }
+
+const data = [{time: '12:00', value: 400}, {time: '12:05', value: 300}, {time: '12:10', value: 300},
+    {time: '12:15', value: 200}, {time: '12:20', value: 100}];
+
 class Home extends Component {
 
   constructor(){
@@ -28,11 +32,14 @@ class Home extends Component {
 
     this.state = {
       chart_option: 1,
+      trips: [],
+      patients: [],
       trip_data_string: [],
       current_trip_id: "",
       current_times: [],
       current_values: [],
-      current_loc: []
+      current_loc: [],
+      data: data
     }
 
     this.showBar = this.showBar.bind(this);
@@ -41,6 +48,28 @@ class Home extends Component {
     this.showScatter = this.showScatter.bind(this);
     this.displayTripInfo = this.displayTripInfo.bind(this);
     this.helloAlert = this.helloAlert.bind(this);
+  }
+
+  componentDidMount(){
+    RequestHandle.getAllTrips().then((response) => {
+      var temp = [];
+      temp = response.data;
+      this.setState({trips: temp});
+      console.log((this.state.trips));
+    })
+    .catch(function (ex) {
+        console.log("Response parsing failed, Error: ", ex)
+    });;
+
+    RequestHandle.getPatients().then((response) => {
+      var temp = []
+      temp = response.data;
+      this.setState({patients: temp})
+      console.log(this.state.patients)
+    })
+    .catch(function (ex) {
+        console.log("Response parsing failed, Error: ", ex)
+    });;
   }
 
   showLine = () => {
@@ -85,13 +114,6 @@ class Home extends Component {
   }
 
   helloAlert(){
-    //alert(JSON.parse(test.test_String).values)
-
-    //this.setState({current_trip_id: test.id})
-    //this.setState({current_loc: JSON.parse(test.test_String).deviceLocation})
-    //this.setState({current_times: JSON.parse(test.test_String).times})
-    //this.setState({current_values: JSON.parse(test.test_String).values})
-
     var vals_temp = JSON.parse(test.test_String).values
     vals_temp = vals_temp.replace("[", "")
     vals_temp = vals_temp.replace("]", "")
@@ -100,17 +122,31 @@ class Home extends Component {
     })
 
     this.setState({current_values: Object.values(vals_int)})
-    alert(this.state.current_values)
+    //alert(this.state.current_values)
 
     var times_temp = JSON.parse(test.test_String).times
     times_temp = times_temp.replace("[", "")
     times_temp = times_temp.replace("]", "")
-    var times_int = times_temp.split(',').map(function(item){
-      return toString(item);
-    })
+    var times_int = times_temp.split(',')
 
-    this.setState({current_times: Object.values(times_int)})
-    alert(this.state.current_times)
+    this.setState({current_times: times_int})
+    //alert(this.state.current_times)
+
+    let data_temp = []
+
+    for(let i =0; i < this.state.current_times.length; i++){
+      let obj = {
+        time: this.state.current_times[i],
+        value: this.state.current_values[i]
+      }
+
+      data_temp.push(obj);
+    }
+
+    this.setState({data: data_temp})
+    console.log(this.state.data);
+
+    this.setState({current_trip_id: test.id})
 
   }
 
@@ -152,7 +188,7 @@ class Home extends Component {
               <img src = {barchart} className = "btn-logo"></img>
             </button>
             <button className = "chart-selection" onClick = {this.showLine}>
-              <img src = {linechart} className = "btn-logo"></img>
+              <img src = {linechart} data = {this.state.data} className = "btn-logo"></img>
             </button>
             <button className = "chart-selection" onClick = {this.showPie}>
               <img src = {piechart} className = "btn-logo"></img>
@@ -166,7 +202,7 @@ class Home extends Component {
           {(() => {
             switch (this.state.chart_option) {
               case 1:
-                return <LC />;
+                return <LC data = {this.state.data}/>;
               case 2:
                 return <BC />;
               case 3:
@@ -189,7 +225,7 @@ class Home extends Component {
           <div className = "list-title">TRIPS</div>
           <div id = "trip-list">
             <ul>
-              {trips.map((item, index) => {
+              {this.state.trips.map((item, index) => {
                 return <Card onClick = {this.helloAlert}>{item.id}</Card>
               })}
             </ul>
