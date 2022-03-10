@@ -113,6 +113,18 @@ class Home extends Component {
   }
 
   helloAlert(){
+    /*var test;
+
+    RequestHandle.getTripData().then((response) => {
+      test = response.data;
+      //this.setState({trip_data_string: temp})
+      //this.setState({current_trip_id: this.state.trip_data_string.id})
+      console.log(test)
+    })
+    .catch(function (ex) {
+        console.log("Response parsing failed, Error: ", ex)
+    });;*/
+
     var vals_temp = JSON.parse(test.test_String).values
     vals_temp = vals_temp.replace("[", "")
     vals_temp = vals_temp.replace("]", "")
