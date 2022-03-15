@@ -185,7 +185,7 @@ class PatientTab extends Component{
                                 </div>
                                 <div className = "submit-container">
                                     <input type = "text" className = "add-note" onChange = {(item) => this.validNote(item)} placeholder = "Add patient Note"></input>
-                                    <button className = "add" onClick = {(event) => this.addNote(event)} onClick = {() => this.addNote()}>+</button>
+                                    <button className = "add" onClick = {(event) => this.addNote(event)}>+</button>
                                     <button className = "delete" >-</button>
                                 </div>
                             </div>

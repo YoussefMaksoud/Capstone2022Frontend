@@ -1,26 +1,32 @@
 export const patients = [
     {
-        name: "Jeff Roszell",
+        fname: "Jeff",
+        lname: "Roszell",
         info: "random stuf about the patients medical condition or past trips"
     },
     {
-        name: "Youssef Maksoud",
+        fname: "Youssef",
+        lname: "Maksoud",
         info: "random stuf about the patients medical condition or past trips"
     },
     {
-        name: "Ryan Ward",
+        fname: "Ryan",
+        lname: "Ward",
         info: "random stuf about the patients medical condition or past trips"
     },
     {
-        name: "Randy Moore",
+        fname: "Randy",
+        lname: "Moore",
         info: "random stuf about the patients medical condition or past trips"
     },
     {
-        name: "Ali Maksoud",
+        fname: "Ali",
+        lname: "Maksoud",
         info: "random stuf about the patients medical condition or past trips"
     },
     {
-        name: "Khaled Elmalawany",
+        fname: "Khaled",
+        lname: "Elmalawany",
         info: "random stuf about the patients medical condition or past trips"
     },
 ]

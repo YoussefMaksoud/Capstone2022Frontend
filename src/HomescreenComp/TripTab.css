@@ -6,11 +6,13 @@
 #the-container{
     display: flex;
     flex-direction: row;
+
 }
 
 #all-trips{
     overflow: auto;
     flex-grow: 1;
+    height: 100%;
 }
 
 #the-chart{

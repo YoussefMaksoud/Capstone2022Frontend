@@ -113,18 +113,6 @@ class Home extends Component {
   }
 
   helloAlert(){
-    /*var test;
-
-    RequestHandle.getTripData().then((response) => {
-      test = response.data;
-      //this.setState({trip_data_string: temp})
-      //this.setState({current_trip_id: this.state.trip_data_string.id})
-      console.log(test)
-    })
-    .catch(function (ex) {
-        console.log("Response parsing failed, Error: ", ex)
-    });;*/
-
     var vals_temp = JSON.parse(test.test_String).values
     vals_temp = vals_temp.replace("[", "")
     vals_temp = vals_temp.replace("]", "")
@@ -228,15 +216,18 @@ class Home extends Component {
         <div id = "col-3">
           <div id = "patient-list">
             <ul>
-              {patients.map((item, index) => {
-                return <Dropdown question = {item.name} answer = {item.info}></Dropdown>
-              })}
+              {this.state.patients.map((the_patient) => 
+                <button key = {the_patient.healthcarenum} 
+                        onClick = {() => this.getTrips(the_patient.healthcarenum, the_patient.fname, the_patient.lname)}  
+                        className = "patient-list-btns">{the_patient.fname} {the_patient.lname}
+                </button>
+              )}
             </ul>
           </div>
           <div className = "list-title">TRIPS</div>
           <div id = "trip-list">
             <ul>
-              {this.state.trips.map((item, index) => {
+              {trips.map((item, index) => {
                 return <Card onClick = {this.helloAlert}>{item.id}</Card>
               })}
             </ul>
