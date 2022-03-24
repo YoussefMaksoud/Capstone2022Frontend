@@ -137,6 +137,14 @@ class PatientTab extends Component{
         this.forceUpdate();
     }
 
+    deleteNote(){
+
+    }
+
+    deleteCond(){
+        
+    }
+
     render(){
         return(
             <div>
@@ -164,14 +172,13 @@ class PatientTab extends Component{
                                 <div className = "add-container">
                                     <ul>
                                         {this.state.conds.map((condition) => 
-                                            <li className = "condition">{condition.cond}</li>
+                                            <li className = "condition">{condition.cond}<span className = "delete">-</span></li>
                                         )}
                                     </ul>
                                 </div>
                                 <div className = "submit-container">
                                     <input type = "text" className = "add-note" onChange = {(item) => this.validCond(item)} placeholder = "Add patient Condition"></input>
                                     <button className = "add" onClick = {(event) => this.addCond(event)}>+</button>
-                                    <button className = "delete" >-</button>
                                 </div>
                             </div>
                             <h3 className = "info-header">Notes</h3>
@@ -179,14 +186,14 @@ class PatientTab extends Component{
                                 <div className = "add-container">
                                     <ul>
                                         {this.state.notes.map((note) => 
-                                            <li className = "note">{note.note}</li>
+                                            <li className = "note">{note.note}<span className = "delete">-</span></li>
+                                            
                                         )}
                                     </ul>
                                 </div>
                                 <div className = "submit-container">
                                     <input type = "text" className = "add-note" onChange = {(item) => this.validNote(item)} placeholder = "Add patient Note"></input>
                                     <button className = "add" onClick = {(event) => this.addNote(event)}>+</button>
-                                    <button className = "delete" >-</button>
                                 </div>
                             </div>
                         </div>

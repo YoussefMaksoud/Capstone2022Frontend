@@ -101,6 +101,16 @@
     margin-top: 10px;
 }
 
+.note:hover{
+    width: 450px;
+    transition: ease-in-out 0.7s;
+}
+
+.condition:hover{
+    width: 450px;
+    transition: ease-in-out 0.7s;
+}
+
 .add-note{
     margin-top: 100px;
     margin-left: 40px;
