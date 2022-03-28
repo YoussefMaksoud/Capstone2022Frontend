@@ -38,6 +38,28 @@
     border-color: black;
 }
 
+#the_patient{
+    background-color: rgb(66, 106, 216);
+    height: 50px;
+    padding-top: 50px;
+    font-size: 25px;
+    color: white;
+    font-weight: 750;
+    padding-left: 10px;
+}
+
+
+.info-pat{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background-color: rgb(66, 106, 216);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-weight: 700;
+    padding-left: 10px;
+    margin: 0px;
+}
+
 #med-cond{
     background-color: rgb(255, 255, 255);
     flex-grow: 1;
@@ -45,7 +67,7 @@
 
 .add-container{
     overflow: scroll;
-    height:15vh;
+    height: 30vh;
 }
 
 .submit-container{
@@ -88,6 +110,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
 }
 
 .condition{
@@ -95,24 +120,17 @@
     color: white;
     padding:10px;
     width: 500px;
+    height: 30px;
     border-radius: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     margin-top: 10px;
-}
-
-.note:hover{
-    width: 450px;
-    transition: ease-in-out 0.7s;
-}
-
-.condition:hover{
-    width: 450px;
-    transition: ease-in-out 0.7s;
+    display: flex;
+    flex-direction: row;
 }
 
 .add-note{
-    margin-top: 100px;
+    margin-top: 5px;
     margin-left: 40px;
     width: 480px;
     height: 30px;
@@ -134,11 +152,29 @@
 
 .delete{
     height: 32px;
-    width: 32px;
+    width: 10%;
     border-width: 0px;
     border-radius: 5px;
-    background-color: rgb(219, 20, 20);
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(255, 0, 0);
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    flex-grow: 1;
+}
+
+.note-label{
+    flex-grow: 12;
+    width: 10%;
+}
+
+.delete:hover{
+    background-color: rgb(255, 113, 113);
+    border-color: white;
+    border-width: 2px;
+    transition: ease-in-out 0.7s;
 }
 
 .add:hover{

@@ -168,33 +168,54 @@
     background-color: rgb(5, 43, 150);
 }
 
-#patient-list{
-    background-color: rgb(5, 43, 150);
-    overflow: auto;
-    height: 300px;
-    width: 300px;
-    
+#in-prog{
+
 }
 
-.patient-list-btns{
-    width: 80%;
-    margin: 2%;
-    margin-left: 50px;
-    height: 50px;
-    text-align: left;
-    border-width: 0px;
-    border-radius: 2px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    color: white;
-    background-color: rgb(66, 106, 216);
-}
-
-.patient-list-btns:hover{
+#view-trip{
     width: 40%;
-    color: rgb(15, 15, 15);
-    background-color: rgb(221, 221, 221);
-    transition: ease-in-out 0.7s;
+    height: 200px;
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-style: none;
+    background-color: #bcbe16;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+#view-trip:hover{
+    background-color: #dadd10;
+    transition: ease-in-out 0.5s;
+}
+
+#done-trip{
+    width: 40%;
+    height: 200px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #17ac6e;
+    border-style: none;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+#done-trip:hover{
+    background-color: #0fd884;
+    transition: ease-in-out 0.5s;
+}
+
+#trip-in-progress{
+    background-color: rgb(66, 106, 216);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    padding-left: 5px;
+    margin-top: 1px;
+    font-size: 20px;
 }
 
 #trip-list{

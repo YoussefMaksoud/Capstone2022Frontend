@@ -9,7 +9,7 @@ class RequestHandle {
 
     //gets a specific patients trips
     getTrips(hcn){
-        var request = "https://pirfusix-solutions.herokuapp.com/patients/" + hcn + "/trips"
+        var request = "https://pirfusix-solutions.herokuapp.com/trips/pat/" + hcn;
         return axios.get(request);
     }
 
@@ -46,8 +46,13 @@ class RequestHandle {
     }
 
     //get data for a trip
-    getTripData(){
-        var request = "https://pirfusix-solutions.herokuapp.com/tripdata/testget"
+    getWifiData(id){
+        var request = "https://pirfusix-solutions.herokuapp.com/trips/H/" + id;
+        return axios.get(request);
+    }
+
+    getSatTrips(id){
+        var request = "https://pirfusix-solutions.herokuapp.com/trips/PH/" + id;
         return axios.get(request);
     }
 
@@ -62,6 +67,21 @@ class RequestHandle {
         return axios.delete(request);
     }
 
+    getLoginInfo(){
+        var request = "https://pirfusix-solutions.herokuapp.com/login/all"
+        return axios.get(request);
+    }
+
+    finishTrip(){
+        var request = "https://pirfusix-solutions.herokuapp.com/trips/complete";
+        return axios.delete(request);
+    }
+
+    currentTrip(){
+        var request = "https://pirfusix-solutions.herokuapp.com/trips/live"
+        return axios.get(request);
+    }
+    
 }
 
 export default new RequestHandle();

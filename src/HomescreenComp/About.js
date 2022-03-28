@@ -4,6 +4,7 @@ import Jeff from '../Assets/Jeff.png'
 import Youssef from '../Assets/Youssef.png'
 import Randy from '../Assets/Randy.png'
 import Khaled from '../Assets/Khaled.png'
+import Ryan from '../Assets/Ryan.jpg'
 import sensor from '../Assets/sensor.png'
 import palm from '../Assets/palm.png'
 import gateway from '../Assets/gateway.png'
@@ -57,7 +58,7 @@ class About extends Component{
                             <p className = "contact-info">elmalawanykhaled@gmail.com</p>
                         </div>
                         <div className = "Profile" >
-                            <img src = {Youssef} className = "profile-pic"></img>
+                            <img src = {Ryan} className = "profile-pic"></img>
                             <h2 className = "name">Ryan Ward</h2>
                             <p className = "position">Gateway Lead</p>
                             <p className = "contact-info">mr.ryanpward@gmail.com</p>

@@ -25,12 +25,16 @@ class PatientTab extends Component{
             conds:[],
             current_pat: "",
             current_hcn: "",
+            current_dob: "",
+            current_sex: "",
             current_note: "",
             current_cond: ""
         }
 
         this.finddata = this.finddata.bind(this);
         this.addNote = this.addNote.bind(this);
+        this.deleteCond = this.deleteCond.bind(this);
+        this.deleteNote = this.deleteNote.bind(this);
     }
 
     componentDidMount(){
@@ -49,13 +53,15 @@ class PatientTab extends Component{
         alert(this.state.patlist[0].fname);
     }
 
-    getTrips(hcn, f, l){
+    getTrips(hcn, f, l, d, g){
         this.setState({current_hcn: hcn});
         RequestHandle.getTrips(hcn).then((response) => {
             var temp = []
             temp = response.data;
             this.setState({triplist: temp})
             this.setState({current_pat: f + " " + l})
+            this.setState({current_dob: d})
+            this.setState({current_sex: g})
             console.log(this.state.triplist)
         })
         .catch(function (ex) {
@@ -103,6 +109,7 @@ class PatientTab extends Component{
             });
 
             event.preventDefault();
+            this.forceUpdate();
     }
 
     validNote(item){
@@ -129,6 +136,7 @@ class PatientTab extends Component{
             });
 
             event.preventDefault();
+            this.forceUpdate();
     }
 
     validCond(item){
@@ -137,12 +145,16 @@ class PatientTab extends Component{
         this.forceUpdate();
     }
 
-    deleteNote(){
-
+    deleteNote(id){
+        RequestHandle.deleteNote(id);
+        this.forceUpdate();
+        console.log(id);
     }
 
-    deleteCond(){
-        
+    deleteCond(id){
+        RequestHandle.deleteCond(id);
+        this.forceUpdate();
+        console.log(id);
     }
 
     render(){
@@ -153,16 +165,24 @@ class PatientTab extends Component{
                     <div id = "pat-list">
                         <ul>
                             {this.state.patlist.map((the_patient) => 
-                                <button key = {the_patient.healthcarenum} onClick = {() => this.getTrips(the_patient.healthcarenum, the_patient.fname, the_patient.lname)} className = "patient-btns">{the_patient.fname} {the_patient.lname}</button>
+                                <button key = {the_patient.healthcarenum} onClick = {() => this.getTrips(the_patient.healthcarenum, the_patient.fname, the_patient.lname, the_patient.dob, the_patient.sex)} className = "patient-btns">{the_patient.fname} {the_patient.lname}</button>
                                 //needs to be a button instead
                             )}
                         </ul>                        
                     </div>
                     <div id = "patient-profile">
                         <div id = "prev-trips">
+                        <div>
+                            <header id = "the_patient">{this.state.current_pat}</header>
+                            <p className = "info-pat">Sex: {this.state.current_sex}</p>
+                            <p className = "info-pat">Date of Birth: {this.state.current_dob}</p>
+                            <p className = "info-pat">Healthcare Number: {this.state.current_hcn}</p>
+                        </div>
+                        <hr></hr>
+                        <h3 className = "info-header">Trips</h3>
                             <ul>
                                 {this.state.triplist.map((the_trip) => 
-                                    <Card id = {the_trip.tripID} eta = {the_trip.elapsedTime} patient = {this.state.current_pat} className = "patient-btns"></Card>
+                                    <Card id = {the_trip.dataid} patient = {this.state.current_pat} className = "patient-btns"></Card>
                                 )}
                             </ul>  
                         </div>
@@ -170,9 +190,9 @@ class PatientTab extends Component{
                             <h3 className = "info-header">Medical Conditions</h3>
                             <div id = "med-cond">
                                 <div className = "add-container">
-                                    <ul>
+                                    <ul className = "lists">
                                         {this.state.conds.map((condition) => 
-                                            <li className = "condition">{condition.cond}<span className = "delete">-</span></li>
+                                            <li className = "condition"><p className = "note-label">{condition.cond}</p><button onClick = {() => this.deleteCond(condition.condID)} className = "delete">Delete</button></li>
                                         )}
                                     </ul>
                                 </div>
@@ -184,9 +204,9 @@ class PatientTab extends Component{
                             <h3 className = "info-header">Notes</h3>
                             <div id = "pat-notes">
                                 <div className = "add-container">
-                                    <ul>
+                                    <ul className = "lists">
                                         {this.state.notes.map((note) => 
-                                            <li className = "note">{note.note}<span className = "delete">-</span></li>
+                                            <li className = "note"><p className = "note-label">{note.note}</p><button onClick = {() => this.deleteNote(note.id)} className = "delete">Delete</button></li>
                                             
                                         )}
                                     </ul>
@@ -199,6 +219,7 @@ class PatientTab extends Component{
                         </div>
                     </div>
                 </div>
+               
                 <Footer/>
             </div>
         )

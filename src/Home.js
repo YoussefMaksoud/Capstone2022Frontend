@@ -17,14 +17,6 @@ import {trips} from './HomescreenComp/Trips'
 import Card from "./HomescreenComp/Card";
 import RequestHandle from './RequestHelpers/RequestHandle';
 
-const test = {
-    id: '1',
-    test_String: '{"id":"1", "values":"[100, 150, 100, 200, 100]", "times":"[12:00, 12:05, 12:10, 12:15, 12:20]", "deviceLocation":"[1, 2, 3, 4, 1]"}'
-}
-
-const data = [{time: '12:00', value: 400}, {time: '12:05', value: 300}, {time: '12:10', value: 300},
-    {time: '12:15', value: 200}, {time: '12:20', value: 100}];
-
 class Home extends Component {
 
   constructor(){
@@ -36,9 +28,8 @@ class Home extends Component {
       patients: [],
       trip_data_string: [],
       current_trip_id: "",
-      current_times: [],
-      current_values: [],
-      data: data
+      current_pat: "",
+      data: []
     }
 
     this.showBar = this.showBar.bind(this);
@@ -46,29 +37,15 @@ class Home extends Component {
     this.showPie = this.showPie.bind(this);
     this.showScatter = this.showScatter.bind(this);
     this.displayTripInfo = this.displayTripInfo.bind(this);
-    this.helloAlert = this.helloAlert.bind(this);
+    this.getPHTrip = this.getPHTrip.bind(this);
+    this.getHTrip = this.getHTrip.bind(this);
+    this.viewTripProgress = this.viewTripProgress.bind(this);
+    this.finishTrip = this.finishTrip.bind(this);
   }
 
   componentDidMount(){
-    RequestHandle.getAllTrips().then((response) => {
-      var temp = [];
-      temp = response.data;
-      this.setState({trips: temp});
-      console.log((this.state.trips));
-    })
-    .catch(function (ex) {
-        console.log("Response parsing failed, Error: ", ex)
-    });;
-
-    RequestHandle.getPatients().then((response) => {
-      var temp = []
-      temp = response.data;
-      this.setState({patients: temp})
-      console.log(this.state.patients)
-    })
-    .catch(function (ex) {
-        console.log("Response parsing failed, Error: ", ex)
-    });;
+    this.getAllTrips();
+    this.getAllPatients();
   }
 
   showLine = () => {
@@ -99,6 +76,30 @@ class Home extends Component {
     })
   }
 
+  getAllTrips(){
+    RequestHandle.getAllTrips().then((response) => {
+      var temp = [];
+      temp = response.data;
+      this.setState({trips: temp});
+      console.log((this.state.trips));
+    })
+    .catch(function (ex) {
+        console.log("Response parsing failed, Error: ", ex)
+    });;
+  }
+
+  getAllPatients(){
+    RequestHandle.getPatients().then((response) => {
+      var temp = []
+      temp = response.data;
+      this.setState({patients: temp})
+      console.log(this.state.patients)
+    })
+    .catch(function (ex) {
+        console.log("Response parsing failed, Error: ", ex)
+    });;
+  }
+
   displayTripInfo(){
       RequestHandle.getTripData().then((response) => {
         var temp = []
@@ -112,40 +113,102 @@ class Home extends Component {
     });;
   }
 
-  helloAlert(){
-    var vals_temp = JSON.parse(test.test_String).values
-    vals_temp = vals_temp.replace("[", "")
-    vals_temp = vals_temp.replace("]", "")
-    var vals_int = vals_temp.split(',').map(function(item){
-      return parseInt(item);
-    })
+  viewTripProgress(){
+    RequestHandle.currentTrip().then((response) => {
+      if(response.data.length > 0){
+        var temp = []
+        temp = response.data;
+        this.setState({current_trip_id: temp[0].dataid + " " + "Live"})
+        this.setState({current_trip_id: temp[0].fname + " " + temp[0].lname})
+        var temp_val = []
 
-    this.setState({current_values: Object.values(vals_int)})
-    //alert(this.state.current_values)
+        for(var i = 0; i < temp.length; i++){
+          var arr = JSON.parse(temp[i].readings);
+          var time_arr = temp[i].times.replace('[', '');
+          time_arr = time_arr.replace(']','');
+          time_arr = time_arr.split(',');
+          for(var j = 0; j < arr.length; j++){
+            var obj = {
+              value: arr[j],
+              time: time_arr[j]
+            }
+            temp_val.push(obj);
+          }
+        }
 
-    var times_temp = JSON.parse(test.test_String).times
-    times_temp = times_temp.replace("[", "")
-    times_temp = times_temp.replace("]", "")
-    var times_int = times_temp.split(',')
+        this.setState({data: temp_val})
+        console.log(this.state.data);
+    }else{
+      this.setState({data: []});
+      console.log(null);
+    }
+  })
+  .catch(function (ex) {
+      console.log("Response parsing failed, Error: ", ex)
+  });;
+  }
 
-    this.setState({current_times: times_int})
-    //alert(this.state.current_times)
+  finishTrip(){
+    RequestHandle.finishTrip();
+  }
 
-    let data_temp = []
+  getHTrip(dataid, name){
+    this.setState({current_trip_id: dataid});
+    this.setState({current_pat: name})
+    RequestHandle.getWifiData(dataid).then((response) => {
+      var temp = []
+      temp = response.data;
+      var temp_val = []
 
-    for(let i =0; i < this.state.current_times.length; i++){
-      let obj = {
-        time: this.state.current_times[i],
-        value: this.state.current_values[i]
+      for(var i = 0; i < temp.length; i++){
+        var arr = JSON.parse(temp[i].readings);
+        var time_arr = temp[i].times.replace('[', '');
+        time_arr = time_arr.replace(']','');
+        time_arr = time_arr.split(',');
+        for(var j = 0; j < arr.length; j++){
+          var obj = {
+            value: arr[j],
+            time: time_arr[j]
+          }
+          temp_val.push(obj);
+        }
       }
 
-      data_temp.push(obj);
-    }
+      this.setState({data: temp_val})
+      console.log(this.state.data);
+    }).catch(function (ex) {
+      console.log("Response parsing failed, Error: ", ex)
+    });;
 
-    this.setState({data: data_temp})
-    console.log(this.state.data);
+  }
 
-    this.setState({current_trip_id: test.id})
+  getPHTrip(dataid, name){
+    this.setState({current_trip_id: dataid});
+    this.setState({current_pat: name})
+    RequestHandle.getSatTrips(dataid).then((response) => {
+      var temp = []
+      temp = response.data;
+      var temp_val = []
+
+      for(var i = 0; i < temp.length; i++){
+        var arr = JSON.parse(temp[i].readings);
+        var time_arr = temp[i].times.replace('[', '');
+        time_arr = time_arr.replace(']','');
+        time_arr = time_arr.split(',');
+        for(var j = 0; j < arr.length; j++){
+          var obj = {
+            value: arr[j],
+            time: time_arr[j]
+          }
+          temp_val.push(obj);
+        }
+      }
+
+      this.setState({data: temp_val})
+      console.log(this.state.data);
+    }).catch(function (ex) {
+      console.log("Response parsing failed, Error: ", ex)
+    });;
 
   }
 
@@ -156,7 +219,7 @@ class Home extends Component {
       <div id = "content-headers">
         <div className = "header-1">TRIP INFORMATION</div>
         <div className = "header-2">OXYGEN READINGS</div>
-        <div className = "header-3">PATIENTS</div>
+        <div className = "header-3">IN PROGRESS</div>
       </div>
       <div id = "home-content">
         <div id = "col-1">
@@ -167,7 +230,7 @@ class Home extends Component {
                 <hr></hr>
               </div>
               <div id = "eta">
-                <h5 className = "trip-det-head">ETA:</h5>
+                <h5 className = "trip-det-head">Patient: {this.state.current_pat}</h5>
                 <hr></hr>
               </div>
               <p id = "notes">
@@ -203,32 +266,32 @@ class Home extends Component {
               case 1:
                 return <LC data = {this.state.data}/>;
               case 2:
-                return <BC />;
+                return <BC data = {this.state.data}/>;
               case 3:
-                return <PC />;
+                return <PC data = {this.state.data}/>;
               case 4:
-                return <DLC />;
+                return <DLC data = {this.state.data}/>;
               default:
                 return <LC />;
         }
       })()}
         </div>
         <div id = "col-3">
-          <div id = "patient-list">
-            <ul>
-              {this.state.patients.map((the_patient) => 
-                <button key = {the_patient.healthcarenum} 
-                        onClick = {() => this.getTrips(the_patient.healthcarenum, the_patient.fname, the_patient.lname)}  
-                        className = "patient-list-btns">{the_patient.fname} {the_patient.lname}
-                </button>
-              )}
-            </ul>
+          <div id = "in-prog">
+            <div>
+              <div id = "trip-in-progress">ID: 1234 Patient: John Walls</div>
+              <button id = "view-trip" onClick = {()=> this.viewTripProgress()}>View</button>
+              <button id = "done-trip" onClick = {() => {this.finishTrip()}}>Done</button>
+            </div>
           </div>
           <div className = "list-title">TRIPS</div>
           <div id = "trip-list">
             <ul>
-              {trips.map((item, index) => {
-                return <Card onClick = {this.helloAlert}>{item.id}</Card>
+              {this.state.trips.map((item, index) => {
+                return <Card id = {item.dataid} 
+                            patient = {item.fname + " " + item.lname} 
+                            onClickPH = {() => this.getPHTrip(item.dataid, item.fname + " " + item.lname)}
+                            onClickH = {() => this.getHTrip(item.dataid, item.fname + " " + item.lname)}>{item.id}</Card>
               })}
             </ul>
           </div>

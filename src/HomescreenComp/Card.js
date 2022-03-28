@@ -11,6 +11,10 @@ class Card extends Component{
         super(props);
     }
 
+    //er, images, extracting the payload is very important
+    // avatar or anatomical model
+    //to show sensor status and limb status
+
     render(){
         return(
             <div id = "card-container">
@@ -21,11 +25,9 @@ class Card extends Component{
                 <div id = "trip-info">
                     <div id = "phases">
                         <div id = "to-trips">
-                            <button id = "to-trip1" onClick = {this.props.onClick}>PH
+                            <button id = "to-trip1" onClick = {this.props.onClickPH}>Pre-Hospital
                             </button>
-                            <button id = "to-trip2" onClick = {this.props.onClick}>ICU
-                            </button>
-                            <button id = "to-trip3" onClick = {this.props.onClick}>OR
+                            <button id = "to-trip3" onClick = {this.props.onClickH}>Hospital
                             </button>
                         </div>
                     </div>

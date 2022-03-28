@@ -41,22 +41,16 @@
     background-color: #17ac6e;
     flex-grow: 1;
     height: 35px;
-    width: 100px;
-    border-style: none;
-}
-
-#to-trip2{
-    background-color: #ccc924;
-    height: 35px;
-    width: 100px;
+    width: 150px;
     border-style: none;
 }
 
 #to-trip3{
     background-color: #b10707;
     height: 35px;
-    width: 100px;
+    width: 150px;
     border-style: none;
+    flex-grow: 1;
 }
 
 #to-trip1:hover{

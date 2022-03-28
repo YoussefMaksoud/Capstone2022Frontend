@@ -19,7 +19,7 @@ class SignUp extends Component{
        this.state = {
            fname: "",
            lname: "",
-           position: "Software engineer",
+           position: "Nurse",
            email: "",
            phone: "",
            license: ""
@@ -89,7 +89,7 @@ class SignUp extends Component{
 
         alert(JSON.stringify(obj));
 
-        axios.post("https://pirfusix-solutions.herokuapp.com/SignUp", obj)
+        axios.post("https://pirfusix-solutions.herokuapp.com/SignUp/new", obj)
             .then(res => {
                 console.log(obj);
                 console.log(obj.data);
@@ -125,7 +125,7 @@ class SignUp extends Component{
                         <div className='other-fields'>
                             <div className = "inputs">
                                 <h2 className = "label">Email</h2>
-                                <input type = "text" 
+                                <input 
                                     className = "email" 
                                     type = "email" 
                                     placeholder = "Email Address"
@@ -135,7 +135,6 @@ class SignUp extends Component{
                             <div className = "inputs">
                                 <h2 className = "label">Phone</h2>
                                 <input 
-                                    type = "text" 
                                     className = "phone" 
                                     type = "phone" 
                                     placeholder = "(403)123-4567"
