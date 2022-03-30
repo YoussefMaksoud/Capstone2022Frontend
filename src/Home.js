@@ -119,7 +119,7 @@ class Home extends Component {
         var temp = []
         temp = response.data;
         this.setState({current_trip_id: temp[0].dataid + " " + "Live"})
-        this.setState({current_trip_id: temp[0].fname + " " + temp[0].lname})
+        this.setState({current_pat: temp[0].fname + " " + temp[0].lname})
         var temp_val = []
 
         for(var i = 0; i < temp.length; i++){
