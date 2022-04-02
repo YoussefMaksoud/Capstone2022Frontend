@@ -104,10 +104,9 @@ class SignUp extends Component{
 
         return (
             <div className = "create-back" >
-                <header className = "create-top">pIRfusiX</header>
+                <header className = "create-top">Sign Up</header>
                 <div id = "whitespace"></div>
                 <form className = "createbox">
-                    <h1 className = "create">Create Account</h1>
                     <div className = "fields">
                         <div className='name-fields'>
                             <h2 className = "label">Name</h2>

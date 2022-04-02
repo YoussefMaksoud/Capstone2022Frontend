@@ -4,11 +4,11 @@ export const MenuItems = [
         url: "/logged/home",
         cName: "nav-links"
     },
-    {
+    /*{
         title: "Trips",
         url: "/logged/trip",
         cName: "nav-links"
-    },
+    },*/
     {
         title: "Patients",
         url: "/logged/patient",

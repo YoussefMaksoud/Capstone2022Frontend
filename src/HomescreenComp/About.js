@@ -19,13 +19,27 @@ class About extends Component{
                 <div>
                     <Navig/>
                     <div id = "what-we-do">
-                        <h1>About Us</h1>
-                        <p>Health information without the clutter</p>
-                        <p>pIRfusiX solutions is a health monitoring system that measures a patients blood oxygen levels using a custom sensor.
-                            This data is then transmitted using the custom gateway via cellular, satellite or wifi and visualized using our website.
-                            Our objective is to allow practitioners to prepare for oncoming patients from remote locations by 
-                            providing realtime data and trend predictions regarding the patients condition.
-                        </p>
+                        <div className = "the-top">
+                            <div>
+                                <h1 className='about-us'>About Us</h1>
+                                <p className = "mission">Health information without the clutter</p>
+                                <p className = "background">pIRfusiX solutions is a health monitoring system that measures a patients blood oxygen levels using a custom sensor.
+                                    This data is then transmitted using the custom gateway via cellular, satellite or wifi and visualized using our website.
+                                    Our objective is to allow practitioners to prepare for oncoming patients from remote locations by 
+                                    providing realtime data and trend predictions regarding the patients condition.
+                                </p>
+                            </div>
+                        </div>
+                        <div id = "design-images">
+                            <div className = "design-card">
+                                <img src = {sensor} className = "product"></img>
+                                <p className = "position">Custom Sensor</p>
+                            </div>
+                            <div className = "design-card">
+                                <img src = {gateway} className = "product"></img>
+                                <p className = "position">Custom Gateway</p>
+                            </div>
+                        </div>
                     </div>
                     <div id = "whitespace"></div>
                     <h1 id = "team-header">Our Team</h1>
@@ -65,17 +79,6 @@ class About extends Component{
                         </div>
                     </div>
                 </div>
-                <div id = "whitespace"></div>
-                <div id = "design-images">
-                            <div className = "design-card">
-                                <img src = {sensor} className = "product"></img>
-                                <p className = "position">Custom Sensor</p>
-                            </div>
-                            <div className = "design-card">
-                                <img src = {gateway} className = "product"></img>
-                                <p className = "position">Custom Gateway</p>
-                            </div>
-                        </div>
                 <Footer/>
             </div>
         )

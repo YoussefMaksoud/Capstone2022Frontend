@@ -17,35 +17,34 @@
     flex-direction: column;
 }
 
-.navig-bar{
-
-}
-
 #col-1{
     flex-grow: 3;
     display: flex;
     flex-direction: column;
-    
+    border-right: 1px solid;
 }
 
 #col-2{
     flex-grow: 6;
     padding-left: 10%;
     padding-top: 5%;
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(59, 59, 59);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #col-3{
-    background-color: rgb(5, 43, 150);
+    background-color: rgb(59, 59, 59);
     flex-grow: 2;
+    border-left: 1px solid;
 }
 
 #trip-progress{
-    background-color: rgb(5, 43, 150);
+    background-color: rgb(59, 59, 59);
     flex-grow: 1;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #trip-details{
@@ -55,29 +54,38 @@
 }
 
 #trip-id{
- background-color: rgb(136, 167, 255);
- color: white;
- margin: 2.5px;
- flex-grow: 1;
- font-weight: 700;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    margin-left: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(252, 35, 162);
+    height: 50px;
+    width: 99%;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    background-color: rgb(78, 78, 78);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 900;
 
 }
 
 #eta{
-    background-color: rgb(136, 167, 255);
-    font-weight: 700;
+    border-radius: 2px;
+    margin-left: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(252, 35, 162);
+    height: 50px;
+    width: 99%;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    background-color: rgb(78, 78, 78);
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
-    margin: 2.5px;
-    flex-grow: 1;
-}
-
-#notes{
-    flex-grow: 8;
-    background-color: rgb(136, 167, 255);
-    color: white;
-    margin: 2.5px;
-    margin-bottom: 5px;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 900;
 }
 
 .trip-det-head{
@@ -94,39 +102,36 @@
 }
 
 .list-title{
-    background-color: rgb(66, 106, 216);
+    background-color: rgb(41, 41, 41);
     height: 30px;
     text-align: center;
     padding-top: 10px;
     font-weight: 700;
     color: white;
-    border-left: 1px solid;
 }
 
 .header-1{
-    background-color: rgb(66, 106, 216);
+    background-color: rgb(41, 41, 41);
     height: 30px;
     text-align: center;
     padding-top: 10px;
     font-weight: 700;
     color: white;
     flex-grow: 0.70;
-    border-right: 1px solid;
 }
 
 .header-2{
-    background-color: rgb(66, 106, 216);
+    background-color: rgb(41, 41, 41);
     height: 30px;
     text-align: center;
     padding-top: 10px;
     font-weight: 700;
     color: white;
-    flex-grow: 2.5;
-    border-right: 1px solid;
+    flex-grow: 3.5;
 }
 
 .header-3{
-    background-color: rgb(66, 106, 216);
+    background-color: rgb(41, 41, 41);
     height: 30px;
     text-align: center;
     padding-top: 10px;
@@ -139,19 +144,20 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     border-style: solid;
-    border-width: 0.5px;
+    border-width: 0px;
     margin-left: 2px;
     margin-right: 2px;
     height: 175px;
-    background-color: green;
+    background-color: #17ac6e;
+    color: white;
 }
 
 #human-model{
-    background-color: rgb(5, 43, 150);
+    background-color: rgb(59, 59, 59);
     flex-grow: 1;
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(4, auto);
 }
 
 .body-im{
@@ -165,11 +171,7 @@
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    background-color: rgb(5, 43, 150);
-}
-
-#in-prog{
-
+    background-color: rgb(59, 59, 59);
 }
 
 #view-trip{
@@ -209,19 +211,10 @@
     transition: ease-in-out 0.5s;
 }
 
-#trip-in-progress{
-    background-color: rgb(66, 106, 216);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    padding-left: 5px;
-    margin-top: 1px;
-    font-size: 20px;
-}
-
 #trip-list{
     overflow: auto;
-    height: 300px;
-    background-color: rgb(5, 43, 150);
+    height: 440px;
+    background-color: rgb(59, 59, 59);
 }
 
 .btn-logo{
@@ -229,16 +222,18 @@
 }
 
 .chart-selection{
-    border-radius: 3px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: rgb(252, 35, 162);
     margin: 10px;
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(87, 87, 87);
 }
 
 .chart-selection:hover{
-    box-shadow: 5px 5px 10px black;
-    background-color: rgb(66, 114, 248);
+    box-shadow: 2px 2px 10px black;
+    border-color: rgb(252, 35, 162);
     border-radius: 2.5%;
-    transition: ease-in-out 0.7s;
+    transition: ease-in-out 0.25s;
 }
 
 #footer{

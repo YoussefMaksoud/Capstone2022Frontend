@@ -67,10 +67,10 @@ class Login extends Component{
     render(){
         return (
             <div className = "login-back">
-                <header className = "top">pIRfusiX Solutions</header>
+                <header className = "top">LOG IN</header>
                 <div id = "whitespace"></div>
                     <form className = "logbox">
-                        <h1 className = "login">Login</h1>
+                        <h1 className = "login"></h1>
                         <div className='user-div'>
                             <img src = {userLogo} className = "user-logo"></img>
                             <input type = "text" onChange = {(item) => this.setUser(item)} className = "username" placeholder = "EMAIL"></input>
@@ -79,9 +79,9 @@ class Login extends Component{
                             <img src = {passLogo} className = "pass-logo"></img>
                             <input type = "text" onChange = {(item) => this.setPass(item)} className = "password" placeholder = "LICENSE NUMBER"></input>
                         </div>
-                        <button className = "confirm" onClick = {() => this.handleLogin()}>Login</button>
+                        <button className = "confirm" onClick = {() => this.handleLogin()}>LOG IN</button>
                         <div className = "login-footer">
-                            <div className = "dha">Don't have an account?</div>
+                            <div className = "dha">Not a member?</div>
                             <Link to = "/NewAccount" className = "create-link">Create</Link>
                         </div>
                     </form>

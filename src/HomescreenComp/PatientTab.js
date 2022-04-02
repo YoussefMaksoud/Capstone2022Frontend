@@ -165,7 +165,7 @@ class PatientTab extends Component{
                     <div id = "pat-list">
                         <ul>
                             {this.state.patlist.map((the_patient) => 
-                                <button key = {the_patient.healthcarenum} onClick = {() => this.getTrips(the_patient.healthcarenum, the_patient.fname, the_patient.lname, the_patient.dob, the_patient.sex)} className = "patient-btns">{the_patient.fname} {the_patient.lname}</button>
+                                <button className = "pat-but" key = {the_patient.healthcarenum} onClick = {() => this.getTrips(the_patient.healthcarenum, the_patient.fname, the_patient.lname, the_patient.dob, the_patient.sex)} className = "patient-btns">{the_patient.fname} {the_patient.lname}</button>
                                 //needs to be a button instead
                             )}
                         </ul>                        

@@ -17,21 +17,24 @@
 }
 
 #trip-info{
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(41, 41, 41);
+    color: white;
     flex-grow: 4;
     display: flex;
     flex-direction: row;
 }
 
 #identification{
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(41, 41, 41);
+    color: white;
     flex-grow: 1;
     text-align: left;
     padding-top: 5px;
 }
 
 #the-patient{
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(41, 41, 41);
+    color: white;
     flex-grow: 1;
     text-align: left;
     padding-top: 5px;

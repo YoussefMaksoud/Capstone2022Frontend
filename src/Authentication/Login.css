@@ -1,40 +1,37 @@
 .login-back{
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(59, 59, 59);
 }
 
 #whitespace{
-    background-color: white;
+    background-color: rgb(252, 35, 162);
     height: 5px;
 }
 
 .top {
-    Background: rgb(66, 106, 216);
+    Background: rgb(59, 59, 59);
     height: 80px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
+    margin-left: 100px;
+    font-size: 35px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: white;
 }
 
 .logbox{
-    background-color: rgba(255, 255, 255, 0.897);
+    background-color: transparent;
     font-size: 30px;
-    margin-top: 100px;
-    height: 400px;
-    width: 30%;
-    border-radius: 10px;
+    margin-top: 200px;
+    height: 350px;
+    width: 500px;
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.05);
-    margin-right: 20%;
-    margin-left: 15%;
 }
 
 .login{
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
     font-weight: 700;
     margin-left: 50px;
     padding-top: 0px;
@@ -42,49 +39,53 @@
 }
 
 .username{
-    border-radius: 5px;
+    border-radius: 2px;
     margin-bottom: 10px;
     margin-left: 20px;
-    border-width: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(252, 35, 162);
     height: 30px;
-    width: 20vw;
+    width: 300px;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    background-color: rgb(78, 78, 78);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .password{
-    border-radius: 5px;
+    border-radius: 2px;
     margin-bottom: 30px;
     margin-left: 20px;
-    border-width: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(252, 35, 162);
     height: 30px;
-    width: 20vw;
+    width: 300px;
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    background-color: rgb(78, 78, 78);
     align-items: centre;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .confirm{
-    border-radius: 10px;
-    width: 30%;
+    border-radius: 2px;
+    width: 305px;
     margin-left: 100px;
-    height: 50px;
+    height: 40px;
     border-width: 0px;
-    background: rgb(182, 182, 182);
     box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
-    background-color: rgb(136, 167, 255);
+    background-color: rgb(252, 35, 162);
+
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: white;
 }
 
 .confirm:hover{
-    background-color:rgb(45, 78, 121);
-    border-radius: 15px;
-    transition: all 0.5s ease-in-out;
-}
-
-.confirm{
-    font-size: 15px;
-    margin-bottom: 30px;
+    background-color:rgb(255, 68, 177);
+    transition: all 0.3s ease-in-out;
 }
 
 .pass-logo{
@@ -114,10 +115,11 @@
 
 .dha{
     font-size: 15px;
-    margin-left: 100px;
+    margin-left: 150px;
     margin-right: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
+    color:rgb(97, 97, 97);
 }
 
 .create-link{
@@ -125,6 +127,7 @@
     display: inline;
     text-decoration: none;
     margin-left: 0px;
+    color: rgb(252, 35, 162);
 }
 
 

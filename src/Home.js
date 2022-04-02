@@ -227,16 +227,10 @@ class Home extends Component {
             <div id = "trip-details">
               <div id = "trip-id">
                 <h5 className = "trip-det-head">Trip Identification Number: {this.state.current_trip_id}</h5>
-                <hr></hr>
               </div>
               <div id = "eta">
                 <h5 className = "trip-det-head">Patient: {this.state.current_pat}</h5>
-                <hr></hr>
               </div>
-              <p id = "notes">
-                <h5 className = "trip-det-head">Patient Notes</h5>
-                <hr></hr>
-              </p>
             </div>
             <div id = "human-model">
               <div className = "limb">LA</div>
@@ -279,7 +273,6 @@ class Home extends Component {
         <div id = "col-3">
           <div id = "in-prog">
             <div>
-              <div id = "trip-in-progress">ID: 1234 Patient: John Walls</div>
               <button id = "view-trip" onClick = {()=> this.viewTripProgress()}>View</button>
               <button id = "done-trip" onClick = {() => {this.finishTrip()}}>Done</button>
             </div>

@@ -6,6 +6,7 @@
 #the-container{
     display: flex;
     flex-direction: row;
+    background-color: rgb(59, 59, 59);
 
 }
 
