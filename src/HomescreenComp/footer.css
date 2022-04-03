@@ -1,6 +1,6 @@
 #footer-container{
     background-color: rgb(59, 59, 59);
-    height: 380px;
+    height: 280px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

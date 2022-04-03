@@ -12,7 +12,7 @@ class footer extends Component{
                         <ul id = "contact">
                             <h1 id = "facilities">pIRfusiX</h1>
                             <Link id = "faq" to = "/logged/home">Home</Link>
-                            <Link id = "faq" to = "/logged/patients">Patients</Link>
+                            <Link id = "faq" to = "/logged/patient">Patients</Link>
                             <Link id = "faq" to = "/logged/FAQ">Faq</Link>
                             <Link id = "contact" to = "/logged/about">Contact</Link>
                         </ul>

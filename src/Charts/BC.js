@@ -10,8 +10,8 @@ class BC extends Component{
     render() {
         return (
             <BarChart
-              width={800}
-              height={600}
+              width={600}
+              height={400}
               data={this.props.data}
               margin={{
                 top: 5,

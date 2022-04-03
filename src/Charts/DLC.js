@@ -21,8 +21,8 @@ class DLC extends Component{
     render() {
         return (
             <ComposedChart
-              width={900}
-              height={550}
+              width={600}
+              height={400}
               data={this.props.data}
               margin={{
                 top: 20,
