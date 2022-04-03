@@ -58,7 +58,7 @@ class Home extends Component {
   }
 
   startInterval(){
-    this.interval = setInterval(this.viewTripProgress, 5000);
+    this.interval = setInterval(this.viewTripProgress, 10000);
   }
 
   componentWillUnmount(){
