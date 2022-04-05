@@ -9,7 +9,7 @@ class LC extends Component{
 
     render(){
         return(
-            <LineChart className = "line-chart" width={600} height={400} data = {this.props.data}>
+            <LineChart className = "line-chart" width={500} height={350} data = {this.props.data}>
                 <Line type="monotone" dataKey="value" stroke="#FFFFFF" />
                 <CartesianGrid stroke="#ccc" />
                 <XAxis dataKey="time" />
