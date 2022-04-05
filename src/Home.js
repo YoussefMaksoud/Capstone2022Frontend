@@ -43,8 +43,8 @@ class Home extends Component {
     this.getHTrip = this.getHTrip.bind(this);
     this.viewTripProgress = this.viewTripProgress.bind(this);
     this.finishTrip = this.finishTrip.bind(this);
-    this.stopInterval = this.stopInterval.bind(this);
-    this.startInterval = this.startInterval.bind(this);
+    //this.stopInterval = this.stopInterval.bind(this);
+    //this.startInterval = this.startInterval.bind(this);
   }
 
   componentDidMount(){
@@ -53,17 +53,17 @@ class Home extends Component {
     this.viewTripProgress();
   }
 
-  stopInterval(){
+  /*stopInterval(){
     clearInterval(this.interval);
-  }
+  }*/
 
-  startInterval(){
+  /*startInterval(){
     this.interval = setInterval(this.viewTripProgress, 100000);
-  }
+  }*/
 
-  componentWillUnmount(){
+  /*componentWillUnmount(){
     this.stopInterval();
-  }
+  }*/
 
   showLine = () => {
     console.log(this.state.chart_option)
@@ -131,7 +131,7 @@ class Home extends Component {
   }
 
   viewTripProgress(){
-    this.startInterval();
+    //this.startInterval();
     RequestHandle.currentTrip().then((response) => {
       if(response.data.length > 0){
         var temp = []
@@ -171,7 +171,7 @@ class Home extends Component {
   }
 
   getHTrip(dataid, name){
-    this.stopInterval();
+    //this.stopInterval();
     this.setState({current_trip_id: dataid});
     this.setState({current_pat: name})
     RequestHandle.getWifiData(dataid).then((response) => {
@@ -202,7 +202,7 @@ class Home extends Component {
   }
 
   getPHTrip(dataid, name){
-    this.stopInterval();
+    //this.stopInterval();
     this.setState({current_trip_id: dataid});
     this.setState({current_pat: name})
     RequestHandle.getSatTrips(dataid).then((response) => {
