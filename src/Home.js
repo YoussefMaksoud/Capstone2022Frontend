@@ -49,7 +49,7 @@ class Home extends Component {
 
   componentDidMount(){
     this.getAllTrips();
-    this.getAllPatients();
+    //this.getAllPatients();
     this.viewTripProgress();
   }
 
