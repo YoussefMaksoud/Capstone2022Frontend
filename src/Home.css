@@ -213,8 +213,8 @@
 }
 
 #trip-list{
-    overflow: auto;
-    height: 440px;
+    overflow: scroll;
+    height: 300px;
     background-color: rgb(59, 59, 59);
 }
 
